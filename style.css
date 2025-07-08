@@ -2,101 +2,39 @@ body {
   font-family: 'Georgia', serif;
   text-align: center;
   padding: 20px;
-  margin: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
-  color: #333;
-  min-height: 100vh;
 }
 
-/* Textarea */
 textarea {
   width: 80%;
   height: 100px;
   margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 10px;
-  resize: none;
 }
 
-/* Entries list */
 ul {
   list-style: none;
   padding: 0;
 }
 
 li {
-  background: FAF0E6;
+  background: white;
   padding: 10px;
   margin: 10px auto;
   width: 80%;
   border-radius: 8px;
   text-align: left;
-  position: relative;
 }
 
-/* Entry buttons */
-.entry-buttons {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.entry-buttons button {
-  margin-left: 5px;
-  font-size: 0.8rem;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-/* Input + Buttons */
-input, select, button {
-  font-size: 1rem;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 8px;
-  border: none;
-}
-
-button {
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Theme: Pink 🎀 */
 .theme-pink {
-  background-image: url('decor/-2.jpg'); 
+  background: #faf0e6;
   color: #ff8da1;
 }
 
-.theme-pink button {
-  background-color: #ffb6c1;
-  color: white;
-}
-
-/* Theme: Beach 🌊 */
 .theme-beach {
-  background-image: url('decor/-3.jpg'); 
+  background: #faf0e6;
   color: #89cff0;
 }
 
-.theme-beach button {
-  background-color: #00bfff;
-  color: white;
-}
-
-/* Theme: Plant 🌿 */
 .theme-plant {
-  background-image: url('decor/-4.jpg'); /* change path if needed */
+  background: #faf0e6;
   color: #a1f1a1;
-}
-
-.theme-plant button {
-  background-color: #70c174;
-  color: white;
 }
