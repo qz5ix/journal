@@ -1,44 +1,68 @@
+/* Base styles */
 body {
   font-family: 'Georgia', serif;
-  background: #faf0e6;
-  color: #ff8da1;
-  padding: 2rem;
   text-align: center;
+  margin: 0;
+  padding: 2rem;
+  transition: background 0.5s, color 0.5s;
+}
+
+input, textarea, select, button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
 }
 
 textarea {
   width: 80%;
   height: 100px;
-  padding: 1rem;
-  border-radius: 10px;
-  border: 1px solid #ccc;
   resize: none;
-  font-size: 1rem;
 }
 
 button {
-  margin-top: 1rem;
-  padding: 10px 20px;
-  border: none;
-  background-color: #f582ae;
-  color: white;
-  font-weight: bold;
-  border-radius: 8px;
   cursor: pointer;
+  font-weight: bold;
 }
 
-ul {
-  list-style-type: none;
+#entries-list {
+  list-style: none;
   padding: 0;
 }
 
-li {
-  margin-top: 10px;
-  background-color: #fff;
+#entries-list li {
+  background: white;
+  margin: 10px auto;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 10px;
+  width: 80%;
   text-align: left;
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
 }
+
+.entry-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Themes */
+.theme-pink {
+  background: #ffe3ed;
+  color: #b8005d;
+}
+
+.theme-beach {
+  background: #d0f0fd;
+  color: #005577;
+}
+
+.theme-plant {
+  background: #e5f9e0;
+  color: #2b5d34;
+}
+
+.theme-pink button { background: #FFC0CB; color: white; }
+.theme-beach button { background: #cfe2f3; color: white; }
+.theme-plant button { background: #93c47d; color: white; }
