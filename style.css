@@ -1,0 +1,44 @@
+body {
+  font-family: 'Georgia', serif;
+  background: #faf0e6;
+  color: #ff8da1;
+  padding: 2rem;
+  text-align: center;
+}
+
+textarea {
+  width: 80%;
+  height: 100px;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: none;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  border: none;
+  background-color: #f582ae;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-top: 10px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: left;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
