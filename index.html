@@ -2,23 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My Personal Journal</title>
+  <title>My Journal</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <div id="login-screen">
-    <h2>Enter Password</h2>
-    <input type="password" id="password-input" placeholder="Password" />
-    <button onclick="checkPassword()">Unlock</button>
-    <p id="login-error"></p>
+<body class="theme-pink"> <!-- default theme -->
+
+  <!-- Sign Up / Login Screen -->
+  <div id="auth-screen">
+    <h2>Welcome to My Journal 💖</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <button onclick="signup()">Sign Up</button>
+    <p id="auth-message"></p>
   </div>
 
+  <!-- Journal Interface -->
   <div id="journal-screen" style="display:none;">
-    <h1>Dear Diary 📝</h1>
-    <textarea id="entry" placeholder="Write your thoughts here..."></textarea>
-    <button onclick="saveEntry()">Save</button>
+    <h1>Hello, <span id="user-display"></span>!</h1>
+
+    <!-- Theme Selector -->
+    <div id="theme-picker">
+      <label>Choose Your Theme:</label>
+      <select onchange="changeTheme(this.value)">
+        <option value="pink">🎀 Pink Bow</option>
+        <option value="beach">🌊 Blue Beach</option>
+        <option value="plant">🌿 Green Plant</option>
+      </select>
+    </div>
+
+    <!-- Journal Entry -->
+    <textarea id="entry-text" placeholder="Write your thoughts..."></textarea>
+    <button onclick="saveEntry()">Save Entry</button>
+
     <h2>Your Entries</h2>
-    <ul id="entries"></ul>
+    <ul id="entries-list"></ul>
   </div>
 
   <script src="script.js"></script>
