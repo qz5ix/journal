@@ -29,7 +29,7 @@ ul {
 }
 
 li {
-  background: white;
+  background: FAF0E6;
   padding: 10px;
   margin: 10px auto;
   width: 80%;
@@ -81,7 +81,7 @@ button {
 
 /* Theme: Beach 🌊 */
 .theme-beach {
-  background-image: url('decor/-3.jpg'); /* change path if needed */
+  background-image: url('decor/-3.jpg'); 
   color: #89cff0;
 }
 
