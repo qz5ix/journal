@@ -70,7 +70,7 @@ button {
 
 /* Theme: Pink 🎀 */
 .theme-pink {
-  background-image: url('decor/bg-pink.jpg'); 
+  background-image: url('decor/-2.jpg'); 
   color: #ff8da1;
 }
 
@@ -81,7 +81,7 @@ button {
 
 /* Theme: Beach 🌊 */
 .theme-beach {
-  background-image: url('decor/bg-beach.jpg'); /* change path if needed */
+  background-image: url('decor/-3.jpg'); /* change path if needed */
   color: #89cff0;
 }
 
@@ -92,7 +92,7 @@ button {
 
 /* Theme: Plant 🌿 */
 .theme-plant {
-  background-image: url('decor/bg-plant.jpg'); /* change path if needed */
+  background-image: url('decor/-4.jpg'); /* change path if needed */
   color: #a1f1a1;
 }
 
