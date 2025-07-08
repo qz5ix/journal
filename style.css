@@ -1,68 +1,40 @@
-/* Base styles */
 body {
   font-family: 'Georgia', serif;
   text-align: center;
-  margin: 0;
-  padding: 2rem;
-  transition: background 0.5s, color 0.5s;
-}
-
-input, textarea, select, button {
-  margin: 10px;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  font-size: 1rem;
+  padding: 20px;
 }
 
 textarea {
   width: 80%;
   height: 100px;
-  resize: none;
+  margin-top: 10px;
 }
 
-button {
-  cursor: pointer;
-  font-weight: bold;
-}
-
-#entries-list {
+ul {
   list-style: none;
   padding: 0;
 }
 
-#entries-list li {
+li {
   background: white;
-  margin: 10px auto;
   padding: 10px;
-  border-radius: 10px;
+  margin: 10px auto;
   width: 80%;
+  border-radius: 8px;
   text-align: left;
-  position: relative;
 }
 
-.entry-buttons {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-/* Themes */
 .theme-pink {
-  background: #ffe3ed;
-  color: #b8005d;
+  background: #faf0e6;
+  color: #ff8da1;
 }
 
 .theme-beach {
-  background: #d0f0fd;
-  color: #005577;
+  background: #faf0e6;
+  color: #89cff0;
 }
 
 .theme-plant {
-  background: #e5f9e0;
-  color: #2b5d34;
+  background: #faf0e6;
+  color: #a1f1a1;
 }
-
-.theme-pink button { background: #FFC0CB; color: white; }
-.theme-beach button { background: #cfe2f3; color: white; }
-.theme-plant button { background: #93c47d; color: white; }
