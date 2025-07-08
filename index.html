@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Personal Journal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="login-screen">
+    <h2>Enter Password</h2>
+    <input type="password" id="password-input" placeholder="Password" />
+    <button onclick="checkPassword()">Unlock</button>
+    <p id="login-error"></p>
+  </div>
+
+  <div id="journal-screen" style="display:none;">
+    <h1>Dear Diary 📝</h1>
+    <textarea id="entry" placeholder="Write your thoughts here..."></textarea>
+    <button onclick="saveEntry()">Save</button>
+    <h2>Your Entries</h2>
+    <ul id="entries"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
