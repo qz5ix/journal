@@ -1,43 +1,39 @@
 let currentUser = null;
 
-// Sign Up
+function showMessage(msg) {
+  document.getElementById("auth-message").textContent = msg;
+}
+
 function signup() {
   const user = document.getElementById("username").value.trim();
   const pass = document.getElementById("password").value.trim();
-  if (!user || !pass) return showMessage("Please enter a username and password.");
+  if (!user || !pass) return showMessage("Please enter username and password");
 
-  let users = JSON.parse(localStorage.getItem("users")) || {};
-  if (users[user]) return showMessage("Username already taken.");
+  let users = JSON.parse(localStorage.getItem("users") || "{}");
+  if (users[user]) return showMessage("Username already exists");
 
   users[user] = { password: pass, entries: [], theme: "pink" };
   localStorage.setItem("users", JSON.stringify(users));
-  showMessage("Account created! Please log in.");
+  showMessage("Signup successful! Please log in.");
 }
 
-// Login
 function login() {
   const user = document.getElementById("username").value.trim();
   const pass = document.getElementById("password").value.trim();
-  let users = JSON.parse(localStorage.getItem("users")) || {};
 
+  let users = JSON.parse(localStorage.getItem("users") || "{}");
   if (!users[user] || users[user].password !== pass) {
-    return showMessage("Incorrect username or password.");
+    return showMessage("Wrong username or password");
   }
 
   currentUser = user;
   document.getElementById("auth-screen").style.display = "none";
   document.getElementById("journal-screen").style.display = "block";
   document.getElementById("user-display").textContent = user;
-  setTheme(users[user].theme);
+  setTheme(users[user].theme || "pink");
   loadEntries();
 }
 
-// Show message
-function showMessage(msg) {
-  document.getElementById("auth-message").textContent = msg;
-}
-
-// Save Entry
 function saveEntry() {
   const text = document.getElementById("entry-text").value.trim();
   if (!text) return;
@@ -52,48 +48,42 @@ function saveEntry() {
   loadEntries();
 }
 
-// Load Entries
 function loadEntries() {
   let users = JSON.parse(localStorage.getItem("users"));
   const entries = users[currentUser].entries;
   const list = document.getElementById("entries-list");
   list.innerHTML = "";
 
-  entries.forEach((entry, index) => {
+  entries.forEach((entry, i) => {
     const li = document.createElement("li");
     li.innerHTML = `
       <div>${entry.text}</div>
-      <small>${entry.date}</small>
-      <div class="entry-buttons">
-        <button onclick="editEntry(${index})">Edit</button>
-        <button onclick="deleteEntry(${index})">Delete</button>
-      </div>
+      <small>${entry.date}</small><br>
+      <button onclick="editEntry(${i})">Edit</button>
+      <button onclick="deleteEntry(${i})">Delete</button>
     `;
     list.appendChild(li);
   });
 }
 
-// Delete Entry
-function deleteEntry(index) {
+function deleteEntry(i) {
   let users = JSON.parse(localStorage.getItem("users"));
-  users[currentUser].entries.splice(index, 1);
+  users[currentUser].entries.splice(i, 1);
   localStorage.setItem("users", JSON.stringify(users));
   loadEntries();
 }
 
-// Edit Entry
-function editEntry(index) {
+function editEntry(i) {
   let users = JSON.parse(localStorage.getItem("users"));
-  const currentText = users[currentUser].entries[index].text;
-  const updatedText = prompt("Edit your entry:", currentText);
-  if (updatedText !== null) {
-    users[currentUser].entries[index].text = updatedText.trim();
+  const oldText = users[currentUser].entries[i].text;
+  const newText = prompt("Edit your entry:", oldText);
+  if (newText !== null) {
+    users[currentUser].entries[i].text = newText;
     localStorage.setItem("users", JSON.stringify(users));
     loadEntries();
   }
 }
 
-// Change Theme
 function changeTheme(theme) {
   document.body.className = "theme-" + theme;
   let users = JSON.parse(localStorage.getItem("users"));
@@ -101,7 +91,6 @@ function changeTheme(theme) {
   localStorage.setItem("users", JSON.stringify(users));
 }
 
-// Set Theme on Load
 function setTheme(theme) {
   document.body.className = "theme-" + theme;
   document.querySelector("select").value = theme;
