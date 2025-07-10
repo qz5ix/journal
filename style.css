@@ -2,13 +2,26 @@ body {
   font-family: 'Georgia', serif;
   text-align: center;
   padding: 20px;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+  color: #333;
+  min-height: 100vh;
 }
+
 
 textarea {
   width: 80%;
   height: 100px;
   margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  resize: none;
 }
+
 
 ul {
   list-style: none;
@@ -22,19 +35,89 @@ li {
   width: 80%;
   border-radius: 8px;
   text-align: left;
+  position: relative;
 }
 
+
+input, select, button {
+  font-size: 1rem;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
 .theme-pink {
-  background: #faf0e6;
+  background-image: url('decor/bg-pink.jpg');
   color: #ff8da1;
 }
 
+.theme-pink button {
+  background-color: #ffb6c1;
+  color: white;
+}
+
+
 .theme-beach {
-  background: #faf0e6;
+  background-image: url('decor/bg-beach.jpg');
   color: #89cff0;
 }
 
+.theme-beach button {
+  background-color: #00bfff;
+  color: white;
+}
+
+
 .theme-plant {
-  background: #faf0e6;
+  background-image: url('decor/bg-plant.jpg');
   color: #a1f1a1;
+}
+
+.theme-plant button {
+  background-color: #70c174;
+  color: white;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  textarea, input, button, select {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+
+  li {
+    width: 95%;
+    font-size: 0.95rem;
+  }
+
+  .entry-buttons {
+    position: static;
+    margin-top: 10px;
+    text-align: right;
+  }
+
+  .entry-buttons button {
+    margin-left: 5px;
+    font-size: 0.8rem;
+  }
+
+  .top-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 }
